@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <nav id="navbar">
+        <header id="nav-header"><h1>Python Documentation</h1></header>
+        <ul>
+          <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+          <li><a class="nav-link" href="#What_is_unique_about_Python">What is unique about Python</a></li>
+          <li><a class="nav-link" href="#Comments">Comments</a></li>
+          <li><a class="nav-link" href="#Numbers">Numbers</a></li>
+          <li><a class="nav-link" href="#Strings">Strings</a></li>
+          <li><a class="nav-link" href="#Variables">Variables</a></li>
+          <li><a class="nav-link" href="#First_steps_towards_programming">First steps towards programming</a></li>
+          <li><a class="nav-link" href="#Reference">Reference</a></li>
+        </ul>
+      </nav>
+      
+      <main id="main-doc">
+        
+        <section id="Introduction" class="main-section">
+          <header><h1>Introduction</h1></header>
+          
+          <p>Python is an easy to learn, powerful programming language. It has efficient high-level data structures and a simple but effective approach to object-oriented programming. Python’s elegant syntax and dynamic typing, together with its interpreted nature, make it an ideal language for scripting and rapid application development in many areas on most platforms.</p>
+          <p>The Python interpreter is easily extended with new functions and data types implemented in C or C++ (or other languages callable from C). Python is also suitable as an extension language for customizable applications.</p>
+        </section>
+        
+        <section id="What_is_unique_about_Python" class="main-section">
+          <header><h1>What is unique about Python</h1></header>
+          
+          <p>Python is an interpreted language, which can save you considerable time during program development because no compilation and linking is necessary. The interpreter can be used interactively, which makes it easy to experiment with features of the language, to write throw-away programs, or to test functions during bottom-up program development. It is also a handy desk calculator.</p>
+      <p>Python enables programs to be written compactly and readably. Programs written in Python are typically much shorter than equivalent C, C++, or Java programs, for several reasons:</p>
+          
+          <ul>
+            <li>the high-level data types allow you to express complex operations in a single statement</li>
+            <li>statement grouping is done by indentation instead of beginning and ending brackets</li>
+            <li>no variable or argument declarations are necessary</li>
+          </ul>
+        </section>
+        
+        <section id="Comments" class="main-section">
+          <header><h1>Comments</h1></header>
+          
+          <p>Many of the examples in this manual, even those entered at the interactive prompt, include comments. Comments in Python start with the hash character, #, and extend to the end of the physical line. A comment may appear at the start of a line or following whitespace or code, but not within a string literal. A hash character within a string literal is just a hash character. Since comments are to clarify code and are not interpreted by Python, they may be omitted when typing in examples.</p>
+          <p>Some examples:</p>
+          <pre>
+          <code># this is the first comment
+      spam = 1 # and this is the second comment
+                # ... and now a third!
+      text = "# This is not a comment because it's inside quotes."
+      </code>
+      </pre>
+        </section>
+        
+        <section id="Numbers" class="main-section">
+          <header><h1>Numbers</h1></header>
+          
+          <p>Let’s try some simple Python commands. Start the interpreter and wait for the primary prompt, >>>. (It shouldn’t take long.)</p>
+          <p>The interpreter acts as a simple calculator: you can type an expression at it and it will write the value. Expression syntax is straightforward: the operators +, -, * and / work just like in most other languages (for example, Pascal or C); parentheses (()) can be used for grouping. For example:</p>
+          
+          <pre>
+          <code>>>> 2 + 2
+      4
+      >>> 50 - 5*6
+      20
+      >>> (50 - 5*6) / 4
+      5.0
+      >>> 8 / 5  # division always returns a floating point number
+      1.6
+      </code>
+          </pre>
+          
+          <p>The integer numbers (e.g. 2, 4, 20) have type int, the ones with a fractional part (e.g. 5.0, 1.6) have type float.</p>
+          <p>Division (/) always returns a float. To do floor division and get an integer result (discarding any fractional result) you can use the // operator; to calculate the remainder you can use %:</p>
+          
+          <pre>
+          <code>>>> 17 / 3  # classic division returns a float
+      5.666666666666667
+      >>>
+      >>> 17 // 3  # floor division discards the fractional part
+      5
+      >>> 17 % 3  # the % operator returns the remainder of the division
+      2
+      >>> 5 * 3 + 2  # floored quotient * divisor + remainder
+      17
+      </code>
+          </pre>
+          
+          <p>With Python, it is possible to use the ** operator to calculate powers:</p>
+          
+          <pre>
+            <code>>>> 5 ** 2  # 5 squared
+      25
+      >>> 2 ** 7  # 2 to the power of 7
+      128
+      </code>
+        </pre>
+          
+          <p>There is full support for floating point; operators with mixed type operands convert the integer operand to floating point. In addition to int and float, Python supports other types of numbers, such as Decimal and Fraction. Python also has built-in support for complex numbers, and uses the j or J suffix to indicate the imaginary part (e.g. 3+5j).</p>
+        </section>
+        
+        <section id="Strings" class="main-section">
+          <header><h1>Strings</h1></header>
+          
+          <p>Besides numbers, Python can also manipulate strings, which can be expressed in several ways. They can be enclosed in single quotes ('...') or double quotes ("...") with the same result 2. \ can be used to escape quotes:</p>
+          
+          <pre>
+            <code>>>> 'spam eggs'  # single quotes
+      'spam eggs'
+      >>> 'doesn\'t'  # use \' to escape the single quote...
+      "doesn't"
+      >>> "doesn't"  # ...or use double quotes instead
+      "doesn't"
+      >>> '"Yes," they said.'
+      '"Yes," they said.'
+      >>> "\"Yes,\" they said."
+      '"Yes," they said.'
+      >>> '"Isn\'t," they said.'
+      '"Isn\'t," they said.'
+      </code>
+          </pre>
+          
+          <p>In the interactive interpreter, the output string is enclosed in quotes and special characters are escaped with backslashes. While this might sometimes look different from the input (the enclosing quotes could change), the two strings are equivalent. The string is enclosed in double quotes if the string contains a single quote and no double quotes, otherwise it is enclosed in single quotes. The print() function produces a more readable output, by omitting the enclosing quotes and by printing escaped and special characters:</p>
+          
+          <pre>
+            <code>>>> '"Isn\'t," they said.'
+      '"Isn\'t," they said.'
+      >>> print('"Isn\'t," they said.')
+      "Isn't," they said.
+      >>> s = 'First line.\nSecond line.'  # \n means newline
+      >>> s  # without print(), \n is included in the output
+      'First line.\nSecond line.'
+      >>> print(s)  # with print(), \n produces a new line
+      First line.
+      Second line.
+      </code>
+          </pre>
+          
+          <p>Strings can be concatenated (glued together) with the + operator, and repeated with *:</p>
+          
+          <pre>
+          <code>>>> # 3 times 'un', followed by 'ium'
+      >>> 3 * 'un' + 'ium'
+      'unununium'
+      </code>
+        </pre>
+          
+          <p>Two or more <em>string literals</em> (i.e. the ones enclosed between quotes) next to each other are automatically concatenated. This feature is particularly useful when you want to break long strings:</p>
+          
+            <pre>
+          <code>>>> 'Py' 'thon'
+      'Python'
+      >>> text = ('Put several strings within parentheses '
+      ...         'to have them joined together.')
+      >>> text
+      'Put several strings within parentheses to have them joined together.'
+      </code>
+        </pre>
+          
+          <p>This only works with two literals though, not with variables or expressions:</p>
+          
+          <pre>
+          <code>>>> prefix = 'Py'
+      >>> prefix 'thon'  # can't concatenate a variable and a string literal
+        File "&lt;stdin>", line 1
+          prefix 'thon'
+                      ^
+      SyntaxError: invalid syntax
+      >>> ('un' * 3) 'ium'
+        File "&lt;stdin>", line 1
+          ('un' * 3) 'ium'
+                         ^
+      SyntaxError: invalid syntax
+      </code>
+        </pre>
+          
+          <p>Strings can be <em>indexed</em> (subscripted), with the first character having index 0. There is no separate character type; a character is simply a string of size one. Indices may also be negative numbers, to start counting from the right:</p>
+          
+          <pre>
+          <code>>>> word = 'Python'
+      >>> word[0]  # character in position 0
+      'P'
+      >>> word[5]  # character in position 5
+      'n'
+      >>> word[-1]  # last character
+      'n'
+      >>> word[-2]  # second-last character
+      'o'
+      >>> word[-6]
+      'P'
+      </code>
+        </pre>
+          <p>Note that since -0 is the same as 0, negative indices start from -1.</p>
+        </section>
+        
+        <section id="Variables" class="main-section">
+          <header><h1>Variables</h1></header>
+            
+            <p>The equal sign (=) is used to assign a value to a variable. Afterwards, no result is displayed before the next interactive prompt:</p>
+            
+            <pre>
+        <code>>>> width = 20
+      >>> height = 5 * 9
+      >>> width * height
+      900
+      </code>
+        </pre>
+            
+            <p>If a variable is not “defined” (assigned a value), trying to use it will give you an error:</p>
+          
+          <pre>
+        <code>>>> n  # try to access an undefined variable
+      Traceback (most recent call last):
+        File "&lt;stdin>", line 1, in &lt;module>
+      NameError: name 'n' is not defined
+      </code>
+      </pre>
+          
+        </section>
+        
+        <section id="First_steps_towards_programming" class="main-section">
+          <header><h1>First steps towards programming</h1></header>
+          
+          <p>Of course, we can use Python for more complicated tasks than adding two and two together. For instance, we can write an initial sub-sequence of the Fibonacci series as follows:</p>
+          
+          <pre>
+          <code>>>> # Fibonacci series:
+      ... # the sum of two elements defines the next
+      ... a, b = 0, 1
+      >>> while a < 10:
+      ...     print(a)
+      ...     a, b = b, a+b
+      ...
+      0
+      1
+      1
+      2
+      3
+      5
+      8
+      </code>
+        </pre>
+      
+        <p>This example introduces several new features.</p>
+        
+        <ul>
+            <li>The first line contains a <em>multiple assignment</em>: the variables a and b simultaneously get the new values 0 and 1. On the last line this is used again, demonstrating that the expressions on the right-hand side are all evaluated first before any of the assignments take place. The right-hand side expressions are evaluated from the left to the right.</li>
+            <li>The while loop executes as long as the condition (here: a &lt; 10) remains true. In Python, like in C, any non-zero integer value is true; zero is false. The condition may also be a string or list value, in fact any sequence; anything with a non-zero length is true, empty sequences are false. The test used in the example is a simple comparison. The standard comparison operators are written the same as in C: &lt; (less than), > (greater than), == (equal to), &lt;= (less than or equal to), >= (greater than or equal to) and != (not equal to).</li>
+            <li>The <em>body</em> of the loop is <em>indented</em>: indentation is Python’s way of grouping statements. At the interactive prompt, you have to type a tab or space(s) for each indented line. In practice you will prepare more complicated input for Python with a text editor; all decent text editors have an auto-indent facility. When a compound statement is entered interactively, it must be followed by a blank line to indicate completion (since the parser cannot guess when you have typed the last line). Note that each line within a basic block must be indented by the same amount.</li>
+            <li>The print() function writes the value of the argument(s) it is given. It differs from just writing the expression you want to write (as we did earlier in the calculator examples) in the way it handles multiple arguments, floating point quantities, and strings. Strings are printed without quotes, and a space is inserted between items, so you can format things nicely, like this: <pre>
+            <code>>>> i = 256*256
+      >>> print('The value of i is', i)
+      The value of i is 65536</code>
+       </pre>The keyword argument <em>end</em> can be used to avoid the newline after the output, or end the output with a different string:
+       <pre>
+       <code>>>> a, b = 0, 1
+      >>> while a < 1000:
+      ...     print(a, end=',')
+      ...     a, b = b, a+b
+      ...
+      0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,</code>
+      </pre></li>
+          </ul>
+        </section>
+        
+        <section id="Reference" class="main-section">
+          <header><h1>Reference</h1></header>
+          
+          <p>All documentaion in this page is taken from <a href="https://docs.python.org/3/tutorial/index.html" target="_blank">Pyhton.org</a></p>
+        </section>
+        
+      </main>
+      
+</html>

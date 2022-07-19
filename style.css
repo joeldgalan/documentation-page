@@ -1,0 +1,108 @@
+body {
+    font-family: 'Monaco', arial;
+    color: #555;
+  }
+  
+  #navbar {
+    height: 100%;
+    width: 340px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    border-right: 3px solid;
+    background: #EFE;
+    z-index: 1;
+  }
+  
+  header {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  #nav-header {
+    height: 40px;
+    text-align: center;
+  }
+  
+  #navbar ul {
+    padding: 0;
+    height: 80%;
+    overflow-y: scroll;
+    border-top: 3px solid;
+  }
+  
+  #navbar li {
+    list-style: none;
+    border-top: 1px solid;
+    font-size: 16px;
+    position: relative;
+  }
+  
+  .nav-link {
+    display: block;
+    text-decoration: none;
+    padding: 10px 20px 10px 20px;
+    color: #555;
+  }
+  
+  #main-doc {
+    position: absolute;
+    margin-left: 340px;
+    padding-left: 20px;
+    padding-right: 40px;
+  }
+  
+  p {
+    padding-left: 20px;
+    color: #555;
+    font-size: 15px;
+  }
+  
+  ul {
+    list-style-type: circle;
+    padding-left: 60px;
+  }
+  
+  li {
+    line-height: 25px;
+    padding: 5px 0px 5px 0px;
+  }
+  
+  pre {
+    margin: -5px 0px -15px 0px;
+    padding: 0;
+  }
+  
+  code {
+    display: block;
+    padding: 20px;
+    margin-right: 20px;
+    margin-left: 40px;
+    line-height: 25px;
+    background: #EFE;
+    border-radius: 10px;
+    border: 1px solid #DDD;
+    white-space: pre-wrap;
+  }
+  
+  @media (max-width: 800px) {
+    #navbar {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 250px;
+      border: none;
+      border-bottom: 2px solid;
+    }
+    
+    #navbar ul {
+      height: 172px;
+      text-align: center;
+    }
+    
+    #main-doc {
+      position: relative;
+      margin: 0;
+      top: 250px;
+    }
+  }
